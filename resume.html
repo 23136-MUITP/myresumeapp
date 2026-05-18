@@ -1,0 +1,269 @@
+export default function FuturisticResume() {
+  return (
+    <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans">
+      {/* Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,255,200,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(100,100,255,0.18),transparent_35%)]" />
+      <div className="absolute inset-0 backdrop-blur-3xl" />
+
+      {/* Grid Overlay */}
+      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:40px_40px]" />
+
+      <main className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:px-12">
+        {/* Hero Section */}
+        <section className="flex flex-col lg:flex-row justify-between gap-10 items-start mb-16">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 mb-6">
+              <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
+              <span className="text-sm tracking-wide text-cyan-200 uppercase">
+                Technology • Strategy • Entrepreneurship
+              </span>
+            </div>
+
+            <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-none mb-4">
+              Utkarshsinh
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-indigo-400">
+                Jadeja
+              </span>
+            </h1>
+
+            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mt-6">
+              Entrepreneurially driven undergraduate at Master's Union exploring the intersection of AI,
+              strategy, fintech, behavioral design, and digital products.
+            </p>
+          </div>
+
+          {/* Contact Card */}
+          <div className="w-full lg:w-[360px] rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl">
+            <h2 className="text-lg font-semibold text-cyan-200 mb-6 tracking-wide uppercase">
+              Contact
+            </h2>
+
+            <div className="space-y-5 text-gray-300">
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-widest">Phone</p>
+                <p className="text-lg mt-1">9099085859</p>
+              </div>
+
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-widest">Email</p>
+                <p className="text-lg mt-1 break-all">utkarshjadejacollege@gmail.com</p>
+              </div>
+
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-widest">LinkedIn</p>
+                <p className="text-lg mt-1 text-cyan-300">
+                  linkedin.com/in/utkarshsinh-jadeja
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-widest">Location</p>
+                <p className="text-lg mt-1">Gurgaon / Rajkot, India</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About + Skills */}
+        <section className="grid lg:grid-cols-3 gap-8 mb-16">
+          {/* About */}
+          <div className="lg:col-span-2 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 rounded-full bg-cyan-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Professional Summary</h2>
+            </div>
+
+            <p className="text-gray-300 text-lg leading-relaxed">
+              Driven by innovation and ambitious systems thinking, I focus on combining business strategy,
+              creative execution, and emerging technology to build meaningful ventures and products. My interests
+              span AI applications, product ecosystems, gaming systems, fintech, behavioral psychology, and
+              high-growth startup execution. I enjoy solving complex strategic problems while creating ideas that
+              feel culturally resonant and commercially scalable.
+            </p>
+          </div>
+
+          {/* Skills */}
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 rounded-full bg-indigo-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Core Skills</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {[
+                'Strategic Thinking',
+                'AI Workflows',
+                'Entrepreneurship',
+                'Product Strategy',
+                'Business Analytics',
+                'Behavioral Design',
+                'Pixel Art',
+                'Game Theory',
+                'Market Research',
+                'Creative Direction',
+                'Leadership',
+                'Rapid Prototyping'
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm text-gray-200 hover:bg-cyan-400/20 transition"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline */}
+        <section className="grid lg:grid-cols-2 gap-8 mb-16">
+          {/* Education */}
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-3 h-3 rounded-full bg-cyan-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Education</h2>
+            </div>
+
+            <div className="space-y-8">
+              <div className="relative pl-6 border-l border-cyan-400/30">
+                <div className="absolute w-3 h-3 rounded-full bg-cyan-300 -left-[7px] top-1" />
+                <h3 className="text-xl font-semibold">Master's Union</h3>
+                <p className="text-cyan-300 mt-1">Technology & Business Management</p>
+                <p className="text-gray-500 text-sm mt-1">2023 — 2027</p>
+                <p className="text-gray-300 mt-4 leading-relaxed">
+                  Focused on strategy, business analytics, game theory, entrepreneurship, AI applications,
+                  and product-oriented problem solving.
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l border-indigo-400/30">
+                <div className="absolute w-3 h-3 rounded-full bg-indigo-300 -left-[7px] top-1" />
+                <h3 className="text-xl font-semibold">The Rajkumar College</h3>
+                <p className="text-gray-500 text-sm mt-1">2011 — 2023</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Leadership */}
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-3 h-3 rounded-full bg-indigo-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Leadership & Experience</h2>
+            </div>
+
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  Strategic & Entrepreneurial Projects
+                </h3>
+                <ul className="mt-4 space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
+                  <li>
+                    Built high-concept startup frameworks around consumer psychology, retention,
+                    positioning, and scalable product ecosystems.
+                  </li>
+                  <li>
+                    Explored AI-assisted workflows for game design, rapid prototyping, and digital product creation.
+                  </li>
+                  <li>
+                    Worked on systems-focused concepts spanning fintech, gaming, consumer products, and growth strategy.
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-white">Creative & Technical Exploration</h3>
+                <ul className="mt-4 space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
+                  <li>
+                    Skilled pixel artist interested in visual storytelling, addictive gameplay systems,
+                    and modern interactive experiences.
+                  </li>
+                  <li>
+                    Interested in merging creativity with strategic systems and technological execution.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-5 mt-4">
+                <h3 className="text-lg font-semibold text-cyan-200">National Achievement</h3>
+                <p className="text-gray-300 mt-2">
+                  Recognized as <span className="font-semibold text-white">All India Best Cadet (2020)</span>,
+                  demonstrating discipline, leadership, and high-performance execution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Languages & Interests */}
+        <section className="grid lg:grid-cols-2 gap-8">
+          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 rounded-full bg-cyan-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Languages</h2>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 text-gray-300">
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="font-semibold text-white">English</p>
+                <p className="text-sm text-gray-400 mt-1">Fluent</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="font-semibold text-white">Hindi</p>
+                <p className="text-sm text-gray-400 mt-1">Native / Bilingual</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="font-semibold text-white">Gujarati</p>
+                <p className="text-sm text-gray-400 mt-1">Native / Bilingual</p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
+                <p className="font-semibold text-white">German & French</p>
+                <p className="text-sm text-gray-400 mt-1">Limited Working</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 p-8 backdrop-blur-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 rounded-full bg-indigo-300" />
+              <h2 className="text-2xl font-bold tracking-tight">Interests</h2>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {[
+                'Artificial Intelligence',
+                'Fintech',
+                'Gaming Systems',
+                'Behavioral Psychology',
+                'Creative Technology',
+                'Startups',
+                'Consumer Products',
+                'Growth Strategy',
+                'Digital Products',
+                'Systems Thinking'
+              ].map((interest) => (
+                <div
+                  key={interest}
+                  className="px-4 py-3 rounded-2xl bg-black/30 border border-white/10 text-gray-200"
+                >
+                  {interest}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="mt-20 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+          <p>Designed with a modern futuristic aesthetic.</p>
+          <p>
+            © 2026 Utkarshsinh Jadeja — Strategy • Technology • Creativity
+          </p>
+        </footer>
+      </main>
+    </div>
+  )
+}
