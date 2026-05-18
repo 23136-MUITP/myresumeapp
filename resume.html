@@ -1,269 +1,455 @@
-export default function FuturisticResume() {
-  return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,255,200,0.18),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(100,100,255,0.18),transparent_35%)]" />
-      <div className="absolute inset-0 backdrop-blur-3xl" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utkarshsinh Jadeja | Resume</title>
 
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:40px_40px]" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 
-      <main className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:px-12">
-        {/* Hero Section */}
-        <section className="flex flex-col lg:flex-row justify-between gap-10 items-start mb-16">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 mb-6">
-              <div className="w-2 h-2 rounded-full bg-cyan-300 animate-pulse" />
-              <span className="text-sm tracking-wide text-cyan-200 uppercase">
-                Technology • Strategy • Entrepreneurship
-              </span>
-            </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-            <h1 className="text-6xl md:text-7xl font-black tracking-tight leading-none mb-4">
-              Utkarshsinh
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-indigo-400">
-                Jadeja
-              </span>
-            </h1>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+    }
 
-            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mt-6">
-              Entrepreneurially driven undergraduate at Master's Union exploring the intersection of AI,
-              strategy, fintech, behavioral design, and digital products.
-            </p>
-          </div>
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(0,255,255,0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(100,100,255,0.15), transparent 35%);
+      z-index: -2;
+    }
 
-          {/* Contact Card */}
-          <div className="w-full lg:w-[360px] rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl">
-            <h2 className="text-lg font-semibold text-cyan-200 mb-6 tracking-wide uppercase">
-              Contact
-            </h2>
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      z-index: -1;
+    }
 
-            <div className="space-y-5 text-gray-300">
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest">Phone</p>
-                <p className="text-lg mt-1">9099085859</p>
-              </div>
+    .container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+      padding: 60px 0;
+    }
 
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest">Email</p>
-                <p className="text-lg mt-1 break-all">utkarshjadejacollege@gmail.com</p>
-              </div>
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+    }
 
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest">LinkedIn</p>
-                <p className="text-lg mt-1 text-cyan-300">
-                  linkedin.com/in/utkarshsinh-jadeja
-                </p>
-              </div>
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 100px;
+      background: rgba(0,255,255,0.08);
+      border: 1px solid rgba(0,255,255,0.2);
+      color: #8cf6ff;
+      margin-bottom: 30px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-              <div>
-                <p className="text-sm text-gray-500 uppercase tracking-widest">Location</p>
-                <p className="text-lg mt-1">Gurgaon / Rajkot, India</p>
-              </div>
-            </div>
-          </div>
-        </section>
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: cyan;
+      animation: pulse 1.5s infinite;
+    }
 
-        {/* About + Skills */}
-        <section className="grid lg:grid-cols-3 gap-8 mb-16">
-          {/* About */}
-          <div className="lg:col-span-2 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 rounded-full bg-cyan-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Professional Summary</h2>
-            </div>
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: scale(1);}
+      50% { opacity: 1; transform: scale(1.3);}
+      100% { opacity: 0.5; transform: scale(1);}
+    }
 
-            <p className="text-gray-300 text-lg leading-relaxed">
-              Driven by innovation and ambitious systems thinking, I focus on combining business strategy,
-              creative execution, and emerging technology to build meaningful ventures and products. My interests
-              span AI applications, product ecosystems, gaming systems, fintech, behavioral psychology, and
-              high-growth startup execution. I enjoy solving complex strategic problems while creating ideas that
-              feel culturally resonant and commercially scalable.
-            </p>
-          </div>
+    h1 {
+      font-size: clamp(60px, 10vw, 120px);
+      line-height: 0.9;
+      font-weight: 900;
+      letter-spacing: -5px;
+    }
 
-          {/* Skills */}
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-indigo-500/10 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 rounded-full bg-indigo-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Core Skills</h2>
-            </div>
+    .gradient {
+      background: linear-gradient(to right, #67e8f9, white, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-            <div className="flex flex-wrap gap-3">
-              {[
-                'Strategic Thinking',
-                'AI Workflows',
-                'Entrepreneurship',
-                'Product Strategy',
-                'Business Analytics',
-                'Behavioral Design',
-                'Pixel Art',
-                'Game Theory',
-                'Market Research',
-                'Creative Direction',
-                'Leadership',
-                'Rapid Prototyping'
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm text-gray-200 hover:bg-cyan-400/20 transition"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        </section>
+    .subtitle {
+      margin-top: 30px;
+      max-width: 700px;
+      color: #b4bcd0;
+      font-size: 22px;
+      line-height: 1.7;
+    }
 
-        {/* Timeline */}
-        <section className="grid lg:grid-cols-2 gap-8 mb-16">
-          {/* Education */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-3 h-3 rounded-full bg-cyan-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Education</h2>
-            </div>
+    .card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 35px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
 
-            <div className="space-y-8">
-              <div className="relative pl-6 border-l border-cyan-400/30">
-                <div className="absolute w-3 h-3 rounded-full bg-cyan-300 -left-[7px] top-1" />
-                <h3 className="text-xl font-semibold">Master's Union</h3>
-                <p className="text-cyan-300 mt-1">Technology & Business Management</p>
-                <p className="text-gray-500 text-sm mt-1">2023 — 2027</p>
-                <p className="text-gray-300 mt-4 leading-relaxed">
-                  Focused on strategy, business analytics, game theory, entrepreneurship, AI applications,
-                  and product-oriented problem solving.
-                </p>
-              </div>
+    .contact-card {
+      width: 350px;
+    }
 
-              <div className="relative pl-6 border-l border-indigo-400/30">
-                <div className="absolute w-3 h-3 rounded-full bg-indigo-300 -left-[7px] top-1" />
-                <h3 className="text-xl font-semibold">The Rajkumar College</h3>
-                <p className="text-gray-500 text-sm mt-1">2011 — 2023</p>
-              </div>
-            </div>
-          </div>
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
 
-          {/* Leadership */}
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-3 h-3 rounded-full bg-indigo-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Leadership & Experience</h2>
-            </div>
+    .contact-item {
+      margin-bottom: 25px;
+    }
 
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-semibold text-white">
-                  Strategic & Entrepreneurial Projects
-                </h3>
-                <ul className="mt-4 space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
-                  <li>
-                    Built high-concept startup frameworks around consumer psychology, retention,
-                    positioning, and scalable product ecosystems.
-                  </li>
-                  <li>
-                    Explored AI-assisted workflows for game design, rapid prototyping, and digital product creation.
-                  </li>
-                  <li>
-                    Worked on systems-focused concepts spanning fintech, gaming, consumer products, and growth strategy.
-                  </li>
-                </ul>
-              </div>
+    .label {
+      color: #7d8597;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
 
-              <div>
-                <h3 className="text-xl font-semibold text-white">Creative & Technical Exploration</h3>
-                <ul className="mt-4 space-y-3 text-gray-300 leading-relaxed list-disc pl-5">
-                  <li>
-                    Skilled pixel artist interested in visual storytelling, addictive gameplay systems,
-                    and modern interactive experiences.
-                  </li>
-                  <li>
-                    Interested in merging creativity with strategic systems and technological execution.
-                  </li>
-                </ul>
-              </div>
+    .value {
+      font-size: 18px;
+      color: #f1f5f9;
+      word-break: break-word;
+    }
 
-              <div className="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-5 mt-4">
-                <h3 className="text-lg font-semibold text-cyan-200">National Achievement</h3>
-                <p className="text-gray-300 mt-2">
-                  Recognized as <span className="font-semibold text-white">All India Best Cadet (2020)</span>,
-                  demonstrating discipline, leadership, and high-performance execution.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
 
-        {/* Languages & Interests */}
-        <section className="grid lg:grid-cols-2 gap-8">
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 rounded-full bg-cyan-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Languages</h2>
-            </div>
+    .about {
+      grid-column: span 2;
+    }
 
-            <div className="grid grid-cols-2 gap-4 text-gray-300">
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="font-semibold text-white">English</p>
-                <p className="text-sm text-gray-400 mt-1">Fluent</p>
-              </div>
+    .text {
+      color: #b4bcd0;
+      line-height: 1.9;
+      font-size: 17px;
+    }
 
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="font-semibold text-white">Hindi</p>
-                <p className="text-sm text-gray-400 mt-1">Native / Bilingual</p>
-              </div>
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
 
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="font-semibold text-white">Gujarati</p>
-                <p className="text-sm text-gray-400 mt-1">Native / Bilingual</p>
-              </div>
+    .skill {
+      padding: 12px 18px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #dbeafe;
+      font-size: 14px;
+    }
 
-              <div className="p-4 rounded-2xl bg-white/5 border border-white/10">
-                <p className="font-semibold text-white">German & French</p>
-                <p className="text-sm text-gray-400 mt-1">Limited Working</p>
-              </div>
-            </div>
-          </div>
+    .timeline-item {
+      padding-left: 25px;
+      border-left: 2px solid rgba(0,255,255,0.2);
+      margin-bottom: 35px;
+      position: relative;
+    }
 
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 p-8 backdrop-blur-xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 rounded-full bg-indigo-300" />
-              <h2 className="text-2xl font-bold tracking-tight">Interests</h2>
-            </div>
+    .timeline-item::before {
+      content: "";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: cyan;
+      position: absolute;
+      left: -8px;
+      top: 4px;
+    }
 
-            <div className="flex flex-wrap gap-3">
-              {[
-                'Artificial Intelligence',
-                'Fintech',
-                'Gaming Systems',
-                'Behavioral Psychology',
-                'Creative Technology',
-                'Startups',
-                'Consumer Products',
-                'Growth Strategy',
-                'Digital Products',
-                'Systems Thinking'
-              ].map((interest) => (
-                <div
-                  key={interest}
-                  className="px-4 py-3 rounded-2xl bg-black/30 border border-white/10 text-gray-200"
-                >
-                  {interest}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+    .timeline-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-        {/* Footer */}
-        <footer className="mt-20 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
-          <p>Designed with a modern futuristic aesthetic.</p>
-          <p>
-            © 2026 Utkarshsinh Jadeja — Strategy • Technology • Creativity
+    .timeline-sub {
+      color: #67e8f9;
+      margin-bottom: 8px;
+    }
+
+    .timeline-date {
+      color: #7d8597;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #cbd5e1;
+      line-height: 1.8;
+    }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .achievement {
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 25px;
+      background: rgba(0,255,255,0.08);
+      border: 1px solid rgba(0,255,255,0.15);
+    }
+
+    .achievement h3 {
+      color: #8cf6ff;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #7d8597;
+    }
+
+    @media(max-width:900px) {
+      .about {
+        grid-column: span 1;
+      }
+
+      .hero {
+        flex-direction: column;
+      }
+
+      .contact-card {
+        width: 100%;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <section class="hero">
+
+      <div>
+        <div class="badge">
+          <div class="dot"></div>
+          Technology • Strategy • Entrepreneurship
+        </div>
+
+        <h1>
+          Utkarshsinh <br>
+          <span class="gradient">Jadeja</span>
+        </h1>
+
+        <p class="subtitle">
+          Entrepreneurially driven undergraduate at Master's Union exploring the intersection of AI,
+          strategy, fintech, behavioral design, gaming systems, and digital products.
+        </p>
+      </div>
+
+      <div class="card contact-card">
+        <h2 class="section-title">Contact</h2>
+
+        <div class="contact-item">
+          <div class="label">Phone</div>
+          <div class="value">9099085859</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value">utkarshjadejacollege@gmail.com</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <div class="value">linkedin.com/in/utkarshsinh-jadeja</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Location</div>
+          <div class="value">Gurgaon / Rajkot, India</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="grid">
+
+      <div class="card about">
+        <h2 class="section-title">Professional Summary</h2>
+
+        <p class="text">
+          Driven by innovation and ambitious systems thinking, I focus on combining business strategy,
+          creative execution, and emerging technology to build meaningful ventures and products.
+          My interests span AI applications, product ecosystems, gaming systems, fintech,
+          behavioral psychology, and startup execution. I enjoy solving complex strategic problems
+          while creating ideas that feel culturally resonant and commercially scalable.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Core Skills</h2>
+
+        <div class="skills">
+          <div class="skill">Strategic Thinking</div>
+          <div class="skill">AI Workflows</div>
+          <div class="skill">Entrepreneurship</div>
+          <div class="skill">Product Strategy</div>
+          <div class="skill">Business Analytics</div>
+          <div class="skill">Behavioral Design</div>
+          <div class="skill">Pixel Art</div>
+          <div class="skill">Game Theory</div>
+          <div class="skill">Leadership</div>
+          <div class="skill">Creative Direction</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="grid">
+
+      <div class="card">
+
+        <h2 class="section-title">Education</h2>
+
+        <div class="timeline-item">
+          <div class="timeline-title">Master's Union</div>
+          <div class="timeline-sub">Technology & Business Management</div>
+          <div class="timeline-date">2023 — 2027</div>
+
+          <p class="text">
+            Focused on strategy, analytics, entrepreneurship,
+            game theory, AI applications, and product thinking.
           </p>
-        </footer>
-      </main>
-    </div>
-  )
-}
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-title">The Rajkumar College</div>
+          <div class="timeline-date">2011 — 2023</div>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <h2 class="section-title">Leadership & Experience</h2>
+
+        <ul>
+          <li>
+            Built startup and product frameworks around retention,
+            consumer psychology, positioning, and scalable systems.
+          </li>
+
+          <li>
+            Explored AI-assisted workflows for game design,
+            rapid prototyping, and digital product creation.
+          </li>
+
+          <li>
+            Worked on systems-focused concepts spanning fintech,
+            gaming, consumer products, and growth strategy.
+          </li>
+
+          <li>
+            Skilled pixel artist interested in interactive storytelling
+            and addictive gameplay systems.
+          </li>
+        </ul>
+
+        <div class="achievement">
+          <h3>All India Best Cadet — 2020</h3>
+
+          <p class="text">
+            Demonstrated discipline, leadership, teamwork,
+            and high-performance execution in competitive environments.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="grid">
+
+      <div class="card">
+        <h2 class="section-title">Languages</h2>
+
+        <div class="skills">
+          <div class="skill">English — Fluent</div>
+          <div class="skill">Hindi — Native</div>
+          <div class="skill">Gujarati — Native</div>
+          <div class="skill">German — Limited Working</div>
+          <div class="skill">French — Limited Working</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Interests</h2>
+
+        <div class="skills">
+          <div class="skill">Artificial Intelligence</div>
+          <div class="skill">Fintech</div>
+          <div class="skill">Gaming Systems</div>
+          <div class="skill">Behavioral Psychology</div>
+          <div class="skill">Startups</div>
+          <div class="skill">Growth Strategy</div>
+          <div class="skill">Creative Technology</div>
+          <div class="skill">Consumer Products</div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <div>Designed with a futuristic modern aesthetic.</div>
+      <div>© 2026 Utkarshsinh Jadeja</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
